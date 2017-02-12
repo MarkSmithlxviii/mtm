@@ -25,10 +25,10 @@ def orificeFlow(orificeDiam, head):
         g is the acceleration due to gravity 9.81 m/s/s, and 
         h is the height of water above the centre of the orifice (m).
         
-    Inouts to the function are the orrifice diameter and the height
+    Inputs to the function are the orrifice diameter and the height
     of water above the orifice centre.
     
-    Output is the flow through the orifice in m/s
+    Output is the flow through the orifice in m^3/s
     """
     c = 0.61
     g = 9.81
@@ -38,7 +38,7 @@ def orificeFlow(orificeDiam, head):
     flow = c * area * sqrt(2 * g * head)
     return flow
 
-def dynamicHeadLoss(previousPumpFlow, num90, num45, numCheckValve, 
+def incrementalHeadLoss(previousPumpFlow, num90, num45, numCheckValve, 
                       idFirstPipe, idSecondPipe):
     """
     Dynamic head loss will be calculated based on 
