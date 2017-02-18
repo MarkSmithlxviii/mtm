@@ -41,7 +41,9 @@ def orificeFlow(orificeDiam, head):
 def incrementalHeadLoss(previousPumpFlow, num90, num45, numCheckValve, 
                       idFirstPipe, idSecondPipe):
     """
-    Dynamic head loss will be calculated based on 
+    Incremental head losses will be calculated calculated based on flow 
+    coefficients for the various inline sources of friction.
+    
     
     """
 
