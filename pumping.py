@@ -39,12 +39,22 @@ def orificeFlow(orificeDiam, head):
     return flow
 
 def incrementalHeadLoss(previousPumpFlow, num90, num45, numCheckValve, 
-                      idFirstPipe, idSecondPipe):
+                      pipeID):
     """
     Incremental head losses will be calculated calculated based on flow 
     coefficients for the various inline sources of friction.
     
     
     """
-
+    flowvelocity = previousPumpFlow / (pipeID/2)^2 / pi
+                                      
+    headloss90 = num90 * (flowvelocity)
+    headloss45 = num45 * (flowvelocity)
+    headlosscheckvalve = numCheckValve * (flowvelocity)
+    
+    totalheadloss = (headloss90
+                     + headloss45
+                     + headlosscheckvalve)
+    
+    return totalheadloss
         
